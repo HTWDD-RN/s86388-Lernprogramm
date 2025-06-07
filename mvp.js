@@ -6,11 +6,32 @@ document.addEventListener('DOMContentLoaded', function () {
     let view = new View(presenter);
     presenter.setModelAndView(model, view);
 });
-fetch("https://idefix.informatik.htw-dresde.de:8888/api/quizzes", {
+fetch("https://idefix.informatik.htw-dresden.de:8888/api/quizzes", {
     method: "GET",
     headers: { 
-        "Authorisation": "Basic " + btoa("test@gmail.com:secret")
+        "Authorization": "Basic " + btoa("test@gmail.com:secret")
     }
+})
+.then((response) => {
+    if (!response.ok) {
+        throw new Error("Fehler beim Laden der Quizzes: " + response.statusText);
+    }
+    return response.json();
+})
+.then((data) => {
+    console.log("Quizzes geladen:", data.content);
+}).catch((error) => {
+    console.error("Fehler beim Laden der Quizzes:", error);
+});
+
+let quiz = 2;
+fetch(`https://idefix.informatik.htw-dresden.de:8888/api/quizzes/${quiz}/solve`, {
+    method: "POST",
+    headers: { 
+        "Authorization": "Basic " + btoa("test@gmail.com:secret"),
+        "Content-Type": "application/json"
+    },
+   body: JSON.stringify([/*z.B. 1,2*/ 1]) //hier sind die Antworten des users drin, aka die Antwort war hier die Antwortmöglichkeit vom Array optn am index 1
 })
 .then((response) => {
     if (!response.ok) {
