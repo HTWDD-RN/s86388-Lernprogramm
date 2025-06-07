@@ -6,6 +6,23 @@ document.addEventListener('DOMContentLoaded', function () {
     let view = new View(presenter);
     presenter.setModelAndView(model, view);
 });
+fetch("https://idefix.informatik.htw-dresde.de:8888/api/quizzes", {
+    method: "GET",
+    headers: { 
+        "Authorisation": "Basic " + btoa("test@gmail.com:secret")
+    }
+})
+.then((response) => {
+    if (!response.ok) {
+        throw new Error("Fehler beim Laden der Quizzes: " + response.statusText);
+    }
+    return response.json();
+})
+.then((data) => {
+    console.log("Quizzes geladen:", data);
+}).catch((error) => {
+    console.error("Fehler beim Laden der Quizzes:", error);
+});
 
 // ############# Model ###########################################################################
 //############# Todo: 1 json laden, fragen liefern und antworten überprüfen ######################
