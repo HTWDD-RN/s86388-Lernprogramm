@@ -1,0 +1,101 @@
+[
+  {
+    "task": "Welche Authentifizierung bietet HTTP",
+    "answer": [
+      "Digest Access Authentication",
+      "OTP",
+      "OAuth",
+      "2-Faktor-Authentifizierung"
+  ],
+  "correctIndex" : 0
+  },
+  {
+    "task": "Welches Transportprotokoll eignet sich für zeitkritische Übertragungen",
+    "answer": [
+      "UDP",
+      "TCP",
+      "HTTP",
+      "Fast Retransmit"
+    ],
+  "correctIndex" : 0
+  },
+  {
+    "task": "Welchen Schichten des OSI-Modells entspricht die Internet-Anwendungsschicht?",
+    "answer": [
+      "Anwendungsschicht", 
+      "Transportschicht", 
+      "Sicherungsschicht", 
+      "Netzwerkschicht"
+    ],
+  "correctIndex" : 0
+  },
+  {
+    "task": "Wozu dient die Definition einer Network-Byte-Order?",
+    "answer": [
+      "Zur einheitlichen Darstellung von Mehrbyte-Zahlen im Netzwerk",
+      "Zur Darstellung von Zeichenketten",
+      "Um IP-Adressen zu verschlüsseln",
+      "Für die Sicherheit der Datenübertragung"
+    ],
+  "correctIndex" : 0
+  },
+  {
+    "task": "Welche Zeichencodierungen werden bei Internetprotokollen bevorzugt eingesetzt?",
+    "answer": [
+      "UTF-8",
+      "ASCII",
+      "ISO 8859-1",
+      "UTF-16"
+    ],
+  "correctIndex" : 0
+  },
+  {
+    "task": "Wozu dient HTTP prinzipiell? Wo ist es definiert?",
+    "answer": [
+      "HTTP dient dem Austausch von Daten zwischen Client und Server", 
+      "HTTP ist ein Betriebssystem-Protokoll", 
+      "HTTP dient der lokalen Dateispeicherung", 
+      "HTTP wird für die Verwaltung von IP-Adressen verwendet."
+    ],
+  "correctIndex" : 0
+  },
+  {
+    "task": "Wie ist der Zeilenabschluss für HTTP definiert?",
+    "answer": [
+      "Durch CRLF (Carriage Return + Line Feed)", 
+      "Durch LF (Line Feed)", "Durch Semikolon und Leerzeichen", 
+      "Durch einen einzelnen Zeilenumbruch"
+    ],
+  "correctIndex" : 0
+  },
+  {
+    "task": "Wozu dient die Leerzeile nach den HTTP-Request-Header?",
+    "answer": [
+      "Sie trennt die Header vom Nachrichtentext (Body).", 
+      "Sie beendet die TCP-Verbindung.", 
+      "Sie signalisiert dem Server ein Timeout.", 
+      "Sie markiert das Ende der URL."
+    ],
+  "correctIndex" : 0
+  },
+  {
+    "task": "Was ist der Unterschied zwischen einem GET- und einem POST-Request?",
+    "answer": [
+      "GET überträgt Daten in der URL, POST im Nachrichtentext.", 
+      "GET verschlüsselt Daten automatisch, POST nicht.", 
+      "POST wird nur von mobilen Geräten unterstützt, GET nicht.", 
+      "GET benötigt keine Verbindung, POST schon."
+    ],
+  "correctIndex" : 0
+  },
+  {
+    "task": "Wie fordert ein Browser eine persistente Verbindung an?",
+    "answer": [
+      "Durch den Header-Eintrag 'Connection: keep-alive'", 
+      "Durch das Senden eines HTTP-Ping-Headers", 
+      "Durch das Öffnen eines WebSocket-Tunnels", 
+      "Durch den Zusatz '/persistent' in der URL"
+    ],
+  "correctIndex" : 0
+  }
+]

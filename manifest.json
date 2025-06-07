@@ -1,0 +1,21 @@
+{
+  "name": "Grandioser Lernhelfer ä",
+  "short_name": "Lernhelfer",
+  "description": "Quiz zu Mathe & Webprogrammierung – offline und installierbar.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1e1e1e",
+  "theme_color": "#641ae6",
+    "icons": [
+    {
+      "src": "./icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+    ]
+}

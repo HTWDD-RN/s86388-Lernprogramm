@@ -1,0 +1,400 @@
+* {
+        margin: 0;
+        padding: 0; 
+}
+
+header, main, nav, footer {
+    margin: 0.25em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+}
+
+body {
+    background-color: rgb(234, 255, 46);
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+
+/* CSS für die Zusammenfassung */
+body.showZusammenfassung{
+  position: relative;
+}
+
+body.showZusammenfassung #progress-container {
+  display: none; /* Fortschrittsbalken ausblenden */
+}
+
+/* Zusammenfassung absolut zentrieren */
+body.showZusammenfassung #Ergebnis-Feedback {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: auto; /* Höhe automatisch anpassen */
+  transform: translate(-50%, -50%);
+  /* Damit der Text mittig ausgerichtet ist: */
+  text-align: center;
+}
+
+
+
+
+
+
+
+#Kopfer {
+    /*Boxformatierung*/
+    display: flex;
+    place-items: center; /* kurzform für justify- und align-items */
+    height: 11rem;
+    border-radius: 1rem;
+    
+    background: rgb(100, 171, 230);
+    border-color: rgb(100, 171, 230);
+
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 2.5%;
+    
+    /*Textformatierung*/
+    color:aliceblue;
+    font-size: 2em;
+    font-weight: bold;
+    justify-content: center;
+}
+
+#Frage{
+    /*Boxformatierung*/
+    display:flex;
+    place-items: center; /* kurzform für justify- und align-items */
+    height: 8rem;
+    border-radius: 1.5rem;
+    background-color: rgb(245, 26, 99);
+
+    gap: 2%;
+    margin: 2% 4%;   /*Abstand oben/unten 2% und rechts/links 0px*/
+
+
+    /*Textformatierung*/
+    flex-direction: column;
+    color:aliceblue;
+    font-size: 2em;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#Antwort{
+    /*Boxformatierung*/
+    display:flex;
+    place-items: center;
+    height: 15rem;
+    border-radius: 1.5rem;
+    background-color:chocolate;
+
+    padding: 0 2%;
+    box-sizing: border-box; /* Damit Padding in der Breite enthalten ist */
+
+    gap: 2%;
+    margin: 2.5% 4%;
+
+    justify-content: center;
+}
+
+#Antwort button {
+  /*Boxformatierung*/
+  flex: 1 1 0;
+  min-width: 0;             /* Verhindert, dass der Button zu breit wird */
+  height: 8rem; 
+  padding: 0.5rem 1rem;     /* oben/unten 0.5rem, links/rechts 1rem */
+  border-radius: 0.5rem;    
+  background-color: olive;
+  border: none;
+
+  /*Textformatierung*/
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  color: white;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+#Antwort button:hover {
+  background-color: darkolivegreen;
+}
+
+
+#progress-container {
+  /*Boxformatierung*/
+  width: 92%;
+  height: 0.5rem;
+  background-color: #ddd;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin: 1rem 4%;
+  transition: opacity 0.3s ease;
+}
+
+#progress-bar {
+  /*Boxformatierung*/
+  width: 0; /* Startbreite */
+  height: 100%;
+  background-color: #4caf50; /* Grüner Balken */
+  transition: width 0.3s ease; /* Sanfter Übergang */
+}
+
+
+
+#Ergebnis-Feedback{
+    /*Boxformatierung*/
+    display: flex;
+    flex-direction: column;
+    place-items: center; /* kurzform für justify- und align-items */
+    height: 5rem;
+    border-radius: 1.5rem;
+    background-color: rgb(255, 255, 0);
+    margin-top: 1rem;
+
+    /*Textformatierung*/
+    color: aliceblue;
+    font-size: 1.4rem;
+    font-weight: bold;
+    justify-content: center;
+}
+
+#Ergebnis-Feedback.richtig{
+    color: seagreen;
+}
+
+#Ergebnis-Feedback{
+    color: crimson;
+}
+
+/* Gemeinsamer Container über die volle Breite */
+#controls {
+  position: relative;
+  width: 100%;
+  margin-top: 1.5rem;  /* Abstand nach oben, passt zu „Lern…“ */
+  height: auto;
+}
+
+/* Zurück-Button immer links, mit 4% Rand */
+#controls #back {
+  position: absolute;
+  left: 4%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: steelblue;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
+#controls #back:hover {
+  background-color: #4682b4;
+}
+
+/* Weiter-Button immer mittig */
+#controls #weiter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Zentriert den Button horizontal */
+  
+  display: flex;    
+  place-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: rgb(250, 1, 1);
+  color: aliceblue;
+  font-size: 1em;
+  cursor: pointer;
+}
+#controls #weiter:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/**********************************************************************************************************/
+@media (max-width: 680px) {
+
+#Frage{
+    /*Boxformatierung*/
+    display:flex;
+    flex-direction: column; /* Stellt die Boxen untereinander */
+    place-items: center; /* kurzform für justify- und align-items */
+    height: 8rem;
+    border-radius: 1.5rem;
+    background-color: rgb(245, 26, 99);
+
+    gap: 2%;
+    margin: 2% 4%;   /*Abstand oben/unten 2% und rechts/links 0px*/
+
+
+    /*Textformatierung*/
+    color:aliceblue;
+    font-size: 1.1rem;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+#Kopfer {
+    /*Boxformatierung*/
+    display: flex;
+    place-items: center; /* kurzform für justify- und align-items */
+    height: 6rem;
+    border-radius: 1rem;
+    
+    background: rgb(100, 171, 230);
+    border-color: rgb(100, 171, 230);
+
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 2.5%;
+    
+    /*Textformatierung*/
+    color:aliceblue;
+    font-size: 2em;
+    font-weight: bold;
+    justify-content: center;
+}
+
+
+#Antwort{
+    /*Boxformatierung*/
+    display:grid;
+    grid-template-columns: repeat(2,1fr); /* Flexibles Layout */
+    place-items: center;
+    height: 20rem;
+    border-radius: 1.5rem;
+    background-color:chocolate;
+
+    padding: 0 2%;
+    box-sizing: border-box; /* Damit Padding in der Breite enthalten ist */
+
+    gap: 2%;
+    margin: 2.5% 4%;
+
+    justify-content: center;
+}
+
+
+#Antwort button {
+  /*Boxformatierung*/
+  flex: 1 1 0;
+  min-width: 0;             /* Verhindert, dass der Button zu breit wird */
+  width: 100%; /* Button nimmt die volle Breite ein */
+  height: 9rem; 
+  padding: 0.5rem 1rem;     /* oben/unten 0.5rem, links/rechts 1rem */
+  border-radius: 0.5rem;    
+  background-color: olive;
+  border: none;
+  margin-top: 5px; /* Abstand zwischen den Buttons */
+  margin-bottom: 5px; /* Abstand zwischen den Buttons */
+
+  /*Textformatierung*/
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  color: white;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+#Ergebnis-Feedback{
+    /*Boxformatierung*/
+    display: flex;
+    flex-direction: column;
+    place-items: center; /* kurzform für justify- und align-items */
+    height: 5rem;
+    border-radius: 1.5rem;
+    background-color: rgb(255, 255, 0);
+    margin-top: 1rem;
+
+    /*Textformatierung*/
+    color: aliceblue;
+    font-size: 1rem;
+    font-weight: bold;
+    justify-content: center;
+}
+
+#Ergebnis-Feedback.richtig{
+    color: seagreen;
+}
+
+#Ergebnis-Feedback{
+    color: crimson;
+}
+
+/* Gemeinsamer Container über die volle Breite */
+  #controls {
+   display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    gap: 10px; /* Abstand zwischen den Buttons */
+  }
+
+  /* Überschreibe die absolute Positionierung */
+  #controls #back,
+  #controls #weiter {
+    position: static;
+    transform: none;
+    margin: 0; 
+  }
+
+
+
+
+  /* CSS für die Zusammenfassung */
+body.showZusammenfassung{
+  position: relative;
+}
+
+body.showZusammenfassung #progress-container {
+  display: none; /* Fortschrittsbalken ausblenden */
+}
+
+/* Zusammenfassung absolut zentrieren */
+body.showZusammenfassung #Ergebnis-Feedback {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 8rem;
+  width: 90%; 
+  transform: translate(-50%, -50%);
+  /* Damit der Text mittig ausgerichtet ist: */
+  text-align: center;
+}
+
+body.showZusammenfassung #controls {
+  display: block;       
+  position: absolute;       
+  bottom: 5rem;             
+  left: 50%;                
+  transform: translateX(-50%);
+  width: auto;              
+}
+
+body.showZusammenfassung #controls #back {
+  position: static;
+  height: 8rem;
+  width: 20rem;
+  transform: none;
+  background-color: steelblue;
+}
+
+body.showZusammenfassung #controls #back:hover {
+  background-color: #4682b4;
+}
+
+}

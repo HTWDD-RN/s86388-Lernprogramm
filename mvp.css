@@ -1,0 +1,131 @@
+/*Formatierung für den body
+Hintergrundfarbe, Schriftfarbe und Schriftfamilie*/
+* {
+        margin: 0;
+        padding: 0; 
+}
+
+header, main, nav, footer {
+    margin: 0.25em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+}
+
+body {
+    background-color: rgb(30, 37, 58);
+    height: 100vh;
+}
+
+.header {
+    /*Boxformatierung*/
+    display: flex;
+    place-items: center; /* kurzform für justify- und align-items */
+    height: 11rem;
+    border-radius: 1rem;
+    
+    background: rebeccapurple;
+    border-color: rebeccapurple;
+
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 2.5%;
+    
+    /*Textformatierung*/
+    color:aliceblue;
+    font-size: 2em;
+    font-weight: bold;
+    justify-content: center;
+}
+
+
+.Buttons{
+    /*Boxformatierung*/
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    margin: 2% 0%;   /*Abstand oben/unten 2% und rechts/links 0px*/
+}
+
+.Buttons a{
+    /*boxformatierung*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 10rem;
+    border-radius: 1.5rem;
+    background-color: limegreen;
+
+    
+    /*textformatierung*/
+    color:blueviolet;
+    font-weight: bold;
+    transform: transform .2s;
+    text-decoration: none;
+}
+
+.Buttons a:hover{
+    transform: scale(1.06);
+    background: black;
+}
+
+#start-progress-container {
+  width: 92%;              /* entspricht margin 4% links/rechts */
+  height: 0.5rem;
+  background-color: #ddd;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin: 1.5rem auto;     /* zentriert horizontal */
+}
+
+#start-progress-bar {
+  width: 0;               /* Startbreite 0 */
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}
+
+#start-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    justify-content: center;
+    height: 5rem;
+    border-radius: 1.5rem;
+    background-color: rebeccapurple;
+  
+  
+  text-align: center;
+  margin: 1rem auto;
+  max-width: 600px;
+  color: aliceblue;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+
+
+
+
+@media (max-width: 680px) {
+  .Buttons {
+    /* Boxformatierung */
+    display: flex;
+    flex-direction: column; /* Stellt die Buttons untereinander */
+    justify-content: center;
+  }
+
+  .Buttons a{
+    /* Boxformatierung */
+    width: 92%;            
+    height: 8rem;          
+    border-radius: 1.5rem; 
+    background-color: limegreen; 
+    margin: 0.8rem 4%;        /* Zentriert die Buttons */
+      
+
+  }
+    
+}

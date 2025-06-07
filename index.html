@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="manifest" href="manifest.json"/>
+    <!--
+    <title>Progressive web app zum lernen Sie!</title>
+    
+    <link rel="icon" sizes="512x512" href="bilder/icon-512.png"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+-->
+    <link rel="stylesheet" href="mvp.css" type="text/css"/>
+    <script src="mvp.js" type="text/javascript" defer></script>
+
+    <title> Grandioser Lernhelfer Fransösisch</title>
+
+
+
+
+</head>
+
+<body>
+    <div class="header">
+        Grande Lernhelfer ä
+    </div>
+
+    <div class="Buttons">
+        <a href="Mathe_Seite.html">Mathe</a>                <!-- a hier genannt -> in .css dann buttons a -->
+        <a href="WebP-button.html">Webprogrammierung</a>     <!-- a hier genannt -> in .css dann buttons a -->
+    </div>
+
+  <div id="start-progress-container">
+        <div id="start-progress-bar"></div>
+    </div>
+    <div id="start-stats"></div>
+
+<script>
+
+
+
+</script>
+ 
+<script>
+    // Werte aus dem LocalStorage abrufen und in Variablen speichern
+    document.addEventListener("DOMContentLoaded", function() {
+    
+    const mathCorrect = parseInt(localStorage.getItem("mathe_richtig"))  || 0;
+    const mathWrong   = parseInt(localStorage.getItem("mathe_falsch"))   || 0;
+    const webCorrect  = parseInt(localStorage.getItem("Webprichtig"))    || 0;
+    const webWrong    = parseInt(localStorage.getItem("Webpfalsch"))     || 0;
+    const mathTotal   = parseInt(localStorage.getItem("mathe_gesamt"))   || 0;
+    const webTotal    = parseInt(localStorage.getItem("Webpgesamt"))     || 0;
+
+    // Gesamtaufgaben zählen
+    const totalCorrect = mathCorrect  + webCorrect;
+    const totalWrong   = mathWrong    + webWrong;
+    const totalAnswered= totalCorrect + totalWrong;
+    const totalTasks   = mathTotal    + webTotal;
+
+  
+    //progressbar aktualisieren
+    const bar = document.getElementById("start-progress-bar");
+    bar.style.width = totalTasks > 0
+        ? (totalCorrect / totalTasks * 100) + "%"
+        : "0%";
+
+    //Statistik anzeigen
+    const stats = document.getElementById("start-stats");
+    stats.innerHTML = `
+        <p>Beantwortet: ${totalAnswered}</p>
+        <p>Richtig: ${totalCorrect}</p>
+        <p>Falsch: ${totalWrong}</p>
+    `;
+    });
+</script>
+
+<script>
+//Service Worker registrieren
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => console.log('SW registriert:', reg.scope))
+      .catch(err => console.error('SW-Registrierung fehlgeschlagen:', err));
+  });
+}
+</script>
+
+
+</body>
+</html>
